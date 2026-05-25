@@ -1,8 +1,11 @@
 #!/bin/bash
-echo "This is the second script."
-echo "It is being called from the first script."   
-echo "The current working directory is: $(pwd)"
-echo "The current date and time is: $(date)"
-echo "The user running this script is: $(whoami)"
+
+PERSON1="AMAR"
+PERSON2="ANIL"
+
+echo "$PERSON1: Hi $PERSON2, how are you?"
+echo "$PERSON2: Hi $PERSON1, I'm doing well. How about you?"
+echo "$PERSON1: I'm good too, thanks for asking!"
+
 
 
