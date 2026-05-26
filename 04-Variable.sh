@@ -21,3 +21,4 @@ echo "Current date and time: $(date)"
 echo "Current PID: $$"
 sleep 5
 echo "Current PID after sleep: $$"
+echo " exit status of last command: $?"
