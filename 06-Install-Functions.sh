@@ -13,31 +13,31 @@ fi
 
 VALIDATE () {
     if [ $2 -ne 0 ]; then
-        echo "Failed to install $1. Please check the logs for more details."
+        echo " Installing $1 is failed ... Please check the logs for more details."
         exit 1
     else
         echo "$1 installed successfully."
     fi
 }
 
-echo " I am continuing with the installation of $1"
+echo " I am continuing with the installation process ...  "
 
 dnf list installed mysql
 
-if [$? -ne 0 ]; then
-    echo "MySQL is not installed. Installing MySQL..."
+if [$? -eg 0 ]; then
+    echo "MySQL is already installed.... SKIPPING INSTALLATION"
+else
+    echo "Installing MySQL..."
     dnf install mysql -y
     VALIDATE "MySQL" $?
-else
-    echo "MySQL is already installed."
 fi
 
 dnf list installed nginx
 
-if [$? -ne 0 ]; then
-    echo "Nginx is not installed. Installing Nginx..."
+if [$? -eq 0 ]; then
+    echo "Nginx is already installed. SKIPPING INSTALLATION"
+else
+    echo "Installing Nginx..."
     dnf install nginx -y
     VALIDATE "Nginx" $?
-else
-    echo "Nginx is already installed."
 fi
