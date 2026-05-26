@@ -3,8 +3,7 @@
 USERID=$(id -u)
 
 # Check if the user is root
-if [ $USERID -eq 0 ]; then
-    echo "You are running this script as root."
-else
-    echo "You are running this script as a non-root user."
+if [ $USERID -ne 0 ]; then
+    echo "Please run this script as root."
+    exit 1
 fi
