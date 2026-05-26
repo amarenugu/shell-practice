@@ -18,7 +18,7 @@ VALIDATE () {
     else
         echo "$1 installed successfully."
     fi
-)
+}
 
 echo " I am continuing with the installation of $1"
 
