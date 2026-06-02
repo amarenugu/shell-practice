@@ -15,7 +15,7 @@ fi
 for package in $@
 do
     echo "$TIMESTAMP [INFO] Installing $package
-    dng list installed $package &>> $LOGS_FILE
+    dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> $LOGS_FILE
         if [ $? -eq 0 ]; then
