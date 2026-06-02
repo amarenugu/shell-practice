@@ -16,8 +16,27 @@ if [ ! -d "$LOG_DIR" ]; then
     echo "Created log directory: $LOG_DIR"
 fi
 
-# Create log file if it doesn't exist
-if [ ! -f "$LOGS_FILE" ]; then
-    touch "$LOGS_FILE"
-    echo "Created log file: $LOGS_FILE"
+# first arg what are you trying to install
+# second arg is exit code
+
+VALIDATE () {
+    if [ "$2" -ne 0 ]; then
+        echo " Installing $1 is failed" | tee -a "$LOGS_FILE"
+        exit 1
+    else
+        echo " Installing $1 is successful" | tee -a "$LOGS_FILE"
+    fi
+}
+
+# Installation continuing...    
+
+dnf list installed mysql &>> "$LOGS_FILE"
+if [ $? -ne 0 ]; then
+    dnf install mysql -y &>> "$LOGS_FILE"
+    VALIDATE "MySQL" $?
+else
+    echo "MySQL is already installed....SKIPPING" | tee -a "$LOGS_FILE"
 fi
+
+
+
