@@ -47,3 +47,11 @@ if [ $? -ne 0 ]; then
 else
     echo "Nginx is already installed ....SKIPPING" | tee -a "$LOGS_FILE"
 fi
+
+# Check if NGINX Installed then if Yes then start the process
+
+dnf list installed nginx &>> "$LOGS_FILE"
+if [ $? -e 0 ]; then
+    sudo systemctl start nginx
+    echo "NGINX Process started"
+fi
