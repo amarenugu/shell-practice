@@ -51,7 +51,7 @@ fi
 # Check if NGINX Installed then if Yes then start the process
 
 dnf list installed nginx &>> "$LOGS_FILE"
-if [ $? -e 0 ]; then
+if [ $? -eq 0 ]; then
     sudo systemctl start nginx
     echo "NGINX Process started"
 fi
