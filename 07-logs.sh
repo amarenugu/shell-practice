@@ -16,3 +16,8 @@ if [ ! -d "$LOG_DIR" ]; then
     echo "Created log directory: $LOG_DIR"
 fi
 
+# Create log file if it doesn't exist
+if [ ! -f "$LOGS_FILE" ]; then
+    touch "$LOGS_FILE"
+    echo "Created log file: $LOGS_FILE"
+fi
