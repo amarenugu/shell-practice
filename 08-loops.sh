@@ -19,7 +19,7 @@ VALIDATE () {
         exit 1
     else
         echo "$TIMESTAMP [INFO] Installation of $1 is SUCCESSFUL.. " | tee -a $LOGS_FILE
-
+    fi
 
 }
 
