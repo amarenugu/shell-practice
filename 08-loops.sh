@@ -14,7 +14,7 @@ fi
 
 
 VALIDATE () {
-    if [ $2 -ne 0 ]
+    if [ $2 -ne 0 ]; then
         echo "$TIMESTAMP [ERROR] Installation of $1 is FAILED... " | tee -a $LOGS_FILE
         exit 1
     else
