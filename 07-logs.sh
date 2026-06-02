@@ -41,7 +41,7 @@ fi
 # Insallation NGNIX
 
 dnf list installed nginx &>> "$LOGS_FILE"
-if [$? -ne 0 ]; then
+if [ $? -ne 0 ]; then
     dnf install nginx -y &>> "$LOGS_FILE"
     VALIDATE "Nginix" $?
 else
