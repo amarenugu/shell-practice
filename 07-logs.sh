@@ -9,3 +9,8 @@ if [ "$USERID" -ne 0 ]; then
     echo "Please run this script as root."
     exit 1
 fi
+
+# Create log directory if it doesn't exist
+if [ ! -d "$LOG_DIR" ]; then
+    mkdir -p "$LOG_DIR"
+fi
