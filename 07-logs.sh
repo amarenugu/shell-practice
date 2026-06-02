@@ -13,4 +13,6 @@ fi
 # Create log directory if it doesn't exist
 if [ ! -d "$LOG_DIR" ]; then
     mkdir -p "$LOG_DIR"
+    echo "Created log directory: $LOG_DIR"
 fi
+
