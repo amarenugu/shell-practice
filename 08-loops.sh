@@ -12,16 +12,26 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
+
+VALIDATE () {
+    if [ $2 -ne 0 ]
+        echo "$TIMESTAMP [ERROR] Installation of $1 is FAILED... " | tee -a $LOGS_FILE
+        exit 1
+    else
+        echo "$TIMESTAMP [INFO] Installation of $1 is SUCCESSFUL.. " | tee -a $LOGS_FILE
+
+
+}
+
 for package in $@
 do
     echo "$TIMESTAMP [INFO] Installing $package "
     dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> $LOGS_FILE
-        if [ $? -eq 0 ]; then
-            echo "Installation of $package completed successfully"
-        else 
-            echo "Installation of $package Failed or already installed"
-        fi
+        VALIDATE "Installing $package" $?
+    else
+        echo "$TIMESTAMP [INFO] $package already installed ... SKIPPING."
+
     fi
 done
