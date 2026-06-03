@@ -13,7 +13,7 @@ N="\e[0m"
 
 #Check the root access
 
-if [ $USERID -ne 0 ] then
+if [ $USERID -ne 0 ]; then
     echo -e "Please run the script with $R ROOT $N"
     exit 1
 fi
