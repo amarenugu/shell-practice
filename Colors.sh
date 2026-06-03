@@ -15,7 +15,7 @@ N="\e[0m"
 
 if [ $USERID -ne 0 ]; then
     echo -e "Please run the script with $R ROOT $N"
-    exit 1
+    
 fi
 
 
