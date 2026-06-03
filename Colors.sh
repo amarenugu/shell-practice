@@ -12,6 +12,6 @@ Y="\e[33m"
 N="\e[0m"
 
 
-echo "$G $TIME_STAMP $N"
-echo "$Y $LOGS_FILE $N"
+echo -e "$G $TIME_STAMP $N"
+echo -e "$Y $LOGS_FILE $N"
 
