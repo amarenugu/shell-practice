@@ -8,11 +8,11 @@ DATE=$(date "+%Y-%m-%d-%H-%M-%S")
 
 #Check if Logs dir exist or not
 
-if [ -d $SOURCE_DIR ] || [ -d $DEST_DIR ]; then
+if [ -d $SOURCE_DIR ] && [ -d $DEST_DIR ]; then
     echo "$SOURCE_DIR and $DEST_DIR exist .. CONTINUING ARCHIVE"
 
 else 
-    print "$SOURCE_DIR and $DEST_DIR does not exist .. exiting."
+    echo "$SOURCE_DIR and $DEST_DIR does not exist .. exiting."
     exit 1
 fi
 
