@@ -13,7 +13,7 @@ if [ -d $SOURCE_DIR ] || [ -d $DEST_DIR ]; then
     echo "$SOURCE_DIR and $DEST_DIR exist .. CONTINUING ARCHIVE"
 fi
 
-if [ -z $SOURCE_DIR ]; then
-    echo " $SOURCE_DIR is emtpy..Nothing to Archive"
+if [ -z $DEST_DIR ]; then
+    echo " $DEST_DIR is emtpy..Nothing to Archive"
     exit 1
 fi
