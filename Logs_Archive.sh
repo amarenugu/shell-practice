@@ -10,9 +10,9 @@ DATE=$(date "+%Y-%m-%d-%H-%M-%S")
 
 if [ -d $SOURCE_DIR ] || [ -d $DEST_DIR ]; then
     echo "$SOURCE_DIR and $DEST_DIR exist .. CONTINUING ARCHIVE"
-fi
 
-if [ -z "$DEST_DIR" ]; then
-    echo "DEST_DIR is empty..Nothing to Archive"
+else 
+    print "$SOURCE_DIR and $DEST_DIR does not exist .. exiting."
     exit 1
 fi
+
