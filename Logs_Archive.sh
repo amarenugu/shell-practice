@@ -6,8 +6,6 @@ SOURCE_DIR=/var/log/shell-script
 DEST_DIR=/var/log/shell-script/archive
 DATE=$(date "+%Y-%m-%d-%H-%M-%S")
 
-
-
 #Check if Logs dir exist or not
 
 if [ -d $SOURCE_DIR ] || [ -d $DEST_DIR ]; then
@@ -16,5 +14,5 @@ fi
 
 if [ -z "$DEST_DIR" ]; then
     echo " $DEST_DIR is emtpy..Nothing to Archive"
-    exit 1
+    
 fi
