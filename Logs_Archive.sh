@@ -13,6 +13,6 @@ if [ -d $SOURCE_DIR ] || [ -d $DEST_DIR ]; then
 fi
 
 if [ -z "$DEST_DIR" ]; then
-    echo " $DEST_DIR is emtpy..Nothing to Archive"
-    
+    echo "DEST_DIR is emtpy..Nothing to Archive"
+    exit 1
 fi
